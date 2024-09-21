@@ -5,6 +5,7 @@ DOMAIN-SUFFIX,ipleak.net
 DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,arc.net
+DOMAIN-SUFFIX,docker.com
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,1e100
