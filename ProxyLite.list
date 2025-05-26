@@ -7,6 +7,7 @@ DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,arc.net
 DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,browserleaks.com
+DOMAIN-SUFFIX,steamcommunity.com
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,1e100
