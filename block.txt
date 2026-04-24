@@ -4034,18 +4034,22 @@ yesky.com##div#bdadv.bd_adv,div.wth200>div.baidu,div.ad190
 ||crl.microsoft.com
 ||rad.microsoft.com
 ||watson.microsoft.com
-! --- long4book.com 优化规则 ---
-! --- 针对 long4book.com 的强力拦截 ---
-! 1. 禁用所有外部跳转脚本
-||long4book.com^$script,third-party
-! 2. 注入脚本：禁用 window.open 弹窗
-long4book.com##+js(nowo)
-! 3. 注入脚本：禁用点击劫持脚本 (禁止拦截点击事件)
+! --- long4book.com 极致封杀补丁 ---
+
+! 1. 禁用劫持：防止网站拦截你的点击事件
 long4book.com##+js(acis, click)
 long4book.com##+js(acis, mousedown)
-! 4. 彻底屏蔽所有带 adv 字样的动态容器
-long4book.com##div[class*="adv"]
-long4book.com##div[id*="adv"]
-long4book.com##div[style*="z-index"]
-! 5. 阻止页面检测 AdBlock (防止强制弹窗)
-long4book.com##+js(set-constant, canRunAds, true)
+
+! 2. 禁用弹窗：废掉所有 window.open 跳转逻辑
+long4book.com##+js(nowo)
+
+! 3. 拦截特定广告脚本加载
+||long4book.com/js/*.js$script,domain=long4book.com
+||*^$third-party,script,domain=long4book.com
+
+! 4. 强力隐藏：针对截图中出现的 LOADING 占位符
+long4book.com##div:contains(LOADING)
+long4book.com##div:contains(PLEASE WAIT)
+long4book.com##div[style*="z-index: 9999"]
+long4book.com##.fixed-bottom
+long4book.com##.fixed-top
