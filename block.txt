@@ -4034,3 +4034,16 @@ yesky.com##div#bdadv.bd_adv,div.wth200>div.baidu,div.ad190
 ||crl.microsoft.com
 ||rad.microsoft.com
 ||watson.microsoft.com
+! --- long4book.com 优化规则 ---
+! 1. 隐藏顶部和底部的浮动广告条
+long4book.com##.fixed-bottom
+long4book.com##.fixed-top
+long4book.com##div[id*="adv"]
+long4book.com##div[class*="adv"]
+! 2. 隐藏页面内的干扰元素
+long4book.com##.ads-container
+long4book.com##.bottom-ads
+long4book.com##.middle-ads
+! 3. 禁止特定的广告脚本加载（防止点击跳转）
+||long4book.com/js/ads.js
+||long4book.com^$script,xmlhttprequest
